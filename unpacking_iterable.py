@@ -1,3 +1,5 @@
+from collections import deque
+
 records = ('Dave' , 'dave@example.com' , '123-456789' , 'Mathematics')
 
 name , email , phone_number , department = records
@@ -35,3 +37,16 @@ print(f"Head of items : " , head)
 print(f"Tail of items : " , tail)
 print(f"First items : " , *head2)
 print(f"Last item : " , tail2)
+
+print('-' *40)
+# Using deque(maxlen=N) creates a fixed-sized queue. When new items are added and
+# the queue is full, the oldest item is automatically removed
+q = deque(maxlen=3)
+q.append(1)
+q.append(2)
+q.append(3)
+print(q)
+q.append(4)
+print(q)
+q.append(5)
+print(q)
